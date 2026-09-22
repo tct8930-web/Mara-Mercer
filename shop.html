@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mara Mercer - Products</title>
+    <title>Mara Mercer - Shop</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -19,86 +23,144 @@
             background: #111;
             color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
         header h1 {
-            font-size: 38px;
+            font-size: 42px;
             margin: 0 0 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin: 0;
         }
 
         nav {
             background: white;
             text-align: center;
-            padding: 15px;
+            padding: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav a {
             color: #111;
             text-decoration: none;
-            margin: 0 12px;
+            margin: 0 14px;
             font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .shop-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 40px auto 20px;
+            padding: 0 20px;
+        }
+
+        .shop-intro h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .shop-intro p {
+            color: #666;
         }
 
         .products {
             max-width: 1100px;
-            margin: 40px auto;
+            margin: 30px auto 60px;
             padding: 20px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            gap: 30px;
         }
 
         .product {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
+            overflow: hidden;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
         }
 
         .product img {
             width: 100%;
-            height: 300px;
+            height: 320px;
             object-fit: cover;
-            border-radius: 8px;
+            display: block;
+        }
+
+        .product-info {
+            padding: 22px;
         }
 
         .product h2 {
-            margin: 15px 0 10px;
+            margin: 0 0 10px;
+            font-size: 24px;
+        }
+
+        .description {
+            color: #666;
+            margin-bottom: 15px;
         }
 
         .price {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
+            margin: 15px 0;
         }
 
         .button {
             display: inline-block;
+            width: 100%;
             background: #111;
             color: white;
-            padding: 12px 20px;
+            padding: 14px 20px;
             text-decoration: none;
             border-radius: 6px;
-            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #333;
         }
 
         footer {
             background: #111;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
+            padding: 25px 20px;
         }
 
         @media (max-width: 700px) {
+            header h1 {
+                font-size: 34px;
+            }
+
             .products {
                 grid-template-columns: 1fr;
+                padding: 15px;
+            }
+
+            .product img {
+                height: 280px;
             }
 
             nav a {
                 display: inline-block;
-                margin: 6px;
+                margin: 6px 8px;
             }
         }
     </style>
@@ -108,96 +170,121 @@
 
     <header>
         <h1>Mara Mercer</h1>
-        <p>Our Products</p>
+        <p>Shop Our Collection</p>
     </header>
 
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="shop.html">Products</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Order</a>
     </nav>
+
+    <div class="shop-intro">
+        <h2>Our Products</h2>
+        <p>Explore our collection and choose the products you love.</p>
+    </div>
 
     <div class="products">
 
         <div class="product">
             <img src="product1.jpg" alt="Mara Mercer Mug">
-            <h2>Mug</h2>
-            <p>Quality product from Mara Mercer.</p>
-            <p class="price">$60.50</p>
-            <a href="contact.html" class="button">Buy Now</a>
+            <div class="product-info">
+                <h2>Mug</h2>
+                <p class="description">Quality product from Mara Mercer.</p>
+                <p class="price">$60.50</p>
+                <a href="contact.html" class="button">Buy Now</a>
+            </div>
         </div>
 
         <div class="product">
             <img src="product2.jpg" alt="Mara Mercer Flowers">
-            <h2>Flowers</h2>
-            <p>Quality product from Mara Mercer.</p>
-            <p class="price">$40.60</p>
-            <a href="contact.html" class="button">Buy Now</a>
+            <div class="product-info">
+                <h2>Flowers</h2>
+                <p class="description">Quality product from Mara Mercer.</p>
+                <p class="price">$40.60</p>
+                <a href="contact.html" class="button">Buy Now</a>
+            </div>
         </div>
 
         <div class="product">
             <img src="product3.jpg" alt="Mara Mercer Mug">
-            <h2>Mug</h2>
-            <p>Quality product from Mara Mercer.</p>
-            <p class="price">$55.20</p>
-            <a href="contact.html" class="button">Buy Now</a>
+            <div class="product-info">
+                <h2>Mug</h2>
+                <p class="description">Quality product from Mara Mercer.</p>
+                <p class="price">$55.20</p>
+                <a href="contact.html" class="button">Buy Now</a>
+            </div>
         </div>
 
         <div class="product">
             <img src="product4.jpg" alt="Mara Mercer Mug">
-            <h2>Mug</h2>
-            <p>Quality product from Mara Mercer.</p>
-            <p class="price">$57.40</p>
-            <a href="contact.html" class="button">Buy Now</a>
+            <div class="product-info">
+                <h2>Mug</h2>
+                <p class="description">Quality product from Mara Mercer.</p>
+                <p class="price">$57.40</p>
+                <a href="contact.html" class="button">Buy Now</a>
+            </div>
         </div>
 
         <div class="product">
             <img src="product5.jpg" alt="Mara Mercer Mug">
-            <h2>Mug</h2>
-            <p>Quality product from Mara Mercer.</p>
-            <p class="price">$60.00</p>
-            <a href="contact.html" class="button">Buy Now</a>
+            <div class="product-info">
+                <h2>Mug</h2>
+                <p class="description">Quality product from Mara Mercer.</p>
+                <p class="price">$60.00</p>
+                <a href="contact.html" class="button">Buy Now</a>
+            </div>
         </div>
 
         <div class="product">
             <img src="product6.jpg" alt="Mara Mercer Rug">
-            <h2>Rug</h2>
-            <p>Quality product from Mara Mercer.</p>
-            <p class="price">$45.80</p>
-            <a href="contact.html" class="button">Buy Now</a>
+            <div class="product-info">
+                <h2>Rug</h2>
+                <p class="description">Quality product from Mara Mercer.</p>
+                <p class="price">$45.80</p>
+                <a href="contact.html" class="button">Buy Now</a>
+            </div>
         </div>
 
         <div class="product">
             <img src="product7.jpg" alt="Mara Mercer Rug">
-            <h2>Rug</h2>
-            <p>Quality product from Mara Mercer.</p>
-            <p class="price">$55.80</p>
-            <a href="contact.html" class="button">Buy Now</a>
+            <div class="product-info">
+                <h2>Rug</h2>
+                <p class="description">Quality product from Mara Mercer.</p>
+                <p class="price">$55.80</p>
+                <a href="contact.html" class="button">Buy Now</a>
+            </div>
         </div>
 
         <div class="product">
             <img src="product8.jpg" alt="Mara Mercer Rug">
-            <h2>Rug</h2>
-            <p>Quality product from Mara Mercer.</p>
-            <p class="price">$55.80</p>
-            <a href="contact.html" class="button">Buy Now</a>
+            <div class="product-info">
+                <h2>Rug</h2>
+                <p class="description">Quality product from Mara Mercer.</p>
+                <p class="price">$55.80</p>
+                <a href="contact.html" class="button">Buy Now</a>
+            </div>
         </div>
 
         <div class="product">
             <img src="product9.jpg" alt="Mara Mercer Rug">
-            <h2>Rug</h2>
-            <p>Quality product from Mara Mercer.</p>
-            <p class="price">$48.10</p>
-            <a href="contact.html" class="button">Buy Now</a>
+            <div class="product-info">
+                <h2>Rug</h2>
+                <p class="description">Quality product from Mara Mercer.</p>
+                <p class="price">$48.10</p>
+                <a href="contact.html" class="button">Buy Now</a>
+            </div>
         </div>
 
         <div class="product">
             <img src="product10.jpg" alt="Mara Mercer Flowers">
-            <h2>Flowers</h2>
-            <p>Quality product from Mara Mercer.</p>
-            <p class="price">$60.50</p>
-            <a href="contact.html" class="button">Buy Now</a>
+            <div class="product-info">
+                <h2>Flowers</h2>
+                <p class="description">Quality product from Mara Mercer.</p>
+                <p class="price">$60.50</p>
+                <a href="contact.html" class="button">Buy Now</a>
+            </div>
         </div>
 
     </div>
